@@ -4,12 +4,9 @@ import datetime
 import json
 import pandas as pd
 import locale
-import pyodbc
 import time
-import requests
 from IPython.display import clear_output
 import numpy as np
-import datetime
 from requests.exceptions import ProxyError
 from IPython.display import clear_output
 
@@ -199,7 +196,7 @@ class Code():
                     web_dict['JSON'] = url.content.decode()
 
 
-        except ProxyError as e:
+        except:
             self.debug('Waiting 1 Min for Proxy', debug)
             time.sleep(60 * 5)
         return web_dict
